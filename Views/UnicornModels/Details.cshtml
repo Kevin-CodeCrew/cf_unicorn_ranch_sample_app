@@ -1,0 +1,41 @@
+﻿@model UnicornRanch.Models.UnicornModel
+
+@{
+    ViewData["Title"] = "Unicorn Details";
+}
+
+<h1>Details for Unicorn @Model.UnicornName</h1>
+
+<div>
+    <h4>UnicornModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UnicornName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UnicornName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Color)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Color)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FavoriteSnack)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FavoriteSnack)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CurrentLocation.LocationName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CurrentLocation.LocationName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to Unicorn List</a>
+</div>

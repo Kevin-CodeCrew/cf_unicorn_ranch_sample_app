@@ -1,0 +1,44 @@
+﻿@model IEnumerable<UnicornRanch.Models.UnicornModel>
+
+@{
+    ViewData["Title"] = "All of our Unicorns";
+}
+
+<h1>All of our Unicorns</h1>
+@*TODO: Generated Index provides a skeleton HTML table but probably want to display differently in the future*@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UnicornName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FavoriteSnack)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentLocation.LocationName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.id">@item.UnicornName</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavoriteSnack)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentLocation.LocationName)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
